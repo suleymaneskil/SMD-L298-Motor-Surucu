@@ -1,6 +1,6 @@
 //Robotistan.com L298 motor sürücü kartı örnek kodu.
 
-
+int buzzer_pin = 4;
 int ENA = 10;   //MotorA çıkışı için pwm kontrol pini
 int ENB = 11;  //MotorB çıkışı için pwm kontrol pini
 int INA = 12;  //MotorA çıkışı için yön kontrol pini
@@ -22,24 +22,37 @@ void setup()
 void loop()
 { 
   ileri();           //İki motor da ileri. Bu fonksiyonda hız tanımlanmamıştır. Hız ayarı hızlan() ve yavasla() fonksiyonları ile yapılır.  
+  analogWrite(4, 20);
   hizlan();          //Motor pwm değerleri 0'dan 255'e çıkarılır.
   delay(1000);       //1 saniye bekle.
+  analogWrite(4, 20);
+  delay(50);
   tam_hiz_ileri();   //Tam hız dönmeye devam eder.
-  delay(1000);    
+  delay(1000);  
+  analogWrite(4, 20);
+  delay(50);
   yavasla();         //Motor pwm değerleri 255'den 0'a düşürülür.
   delay(1000);    
-
+analogWrite(4, 20);
+  delay(50);
   dur();             //2 saniye dur.
   delay(2000);    
-
+analogWrite(4, 20);
+  delay(50);
 
   geri();           //İki motor da geri. Bu fonksiyonda hız tanımlanmamıştır. Hız ayarı hızlan() ve yavasla() fonksiyonları ile yapılır.
   hizlan();         //Motor pwm değerleri 0'dan 255'e çıkarılır.
-  delay(1000);  
+  delay(1000);
+  analogWrite(4, 20);
+  delay(50);
   tam_hiz_geri();   //Tam hız dönmeye devam eder.
   delay(1000);
+  analogWrite(4, 20);
+  delay(50);
   yavasla();        //Motor pwm değerleri 255'den 0'a düşürülür.
   delay(1000);
+  analogWrite(4, 20);
+  delay(50);
 }
 
 
